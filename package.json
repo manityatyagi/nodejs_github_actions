@@ -7,10 +7,12 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "lint": "eslint . --ext .js,.mjs"
   },
   "dependencies": {
     "dotenv": "^17.2.3",
+    "eslint": "^9.39.2",
     "express": "^5.2.1"
   }
 }
