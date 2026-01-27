@@ -1,0 +1,30 @@
+name: Linting Workflow
+
+on: 
+    push: 
+      branches: 
+        - main
+
+    pull_request:
+           branches:
+             - main
+    
+jobs: 
+    Linting:
+        name: ESlint Check
+        runs-on: windows-2022
+
+        steps: 
+           - name: Check Repo
+             uses: actions/checkout@v4
+
+           - name: Setup Node.js
+             uses: actions/setup-node@v3
+             with:
+              node-version: 20
+
+           - name: Install dependencies
+             run: npm ci
+            
+           - name: Run ESLint
+             run: npx eslint . --ext .js,.ts,.jsx,.tsx
