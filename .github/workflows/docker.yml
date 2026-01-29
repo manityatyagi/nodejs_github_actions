@@ -18,7 +18,7 @@ jobs:
           
            - name: Docker Image build
              run: |
-              docker build -t my-image -f Dockerfile ./server
+              docker build -t my-image -f Dockerfile .
            
            - name: Login to DockerHub
              uses: docker/login-action@v2
